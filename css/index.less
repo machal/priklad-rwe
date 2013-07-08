@@ -1,0 +1,182 @@
+// --- Mixiny ---
+
+// Micro ClearFix Mixin
+.clearfix {
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}
+
+.dumb_only {
+	position: absolute;
+	top: -200px;
+	left: -200px;	
+}
+
+@import 'lesshat';
+
+// --- Zakladna ---
+
+a img {
+  border: 0;
+}
+
+body {
+  font: 15px/20px sans-serif;	
+  background: #6d431f url('../img/wood.png') repeat;
+  color: #fff;
+  padding: 40px 0;
+	margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 1px solid #ccc;
+	
+	td, th {
+		text-align: left;
+		font-weight: normal;
+		border-bottom: 1px solid #ccc;
+		padding: .5em .2em .5em 0;
+	}
+	
+	th {
+		color: #999;
+	}
+	
+}
+
+// --- Infobox na strane ---
+
+.infobox {
+	color: #000;
+	background: #fff;
+	padding: 1em;
+	margin-bottom: 1em;
+	
+	h2 {
+		margin-top: 0;
+	}
+}
+
+
+// --- Seznam fotek ---
+
+.polaroids {
+	.clearfix;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.polaroid {
+  float: left;
+  width: 170px;
+  height: 180px;
+  padding: 10px;
+  margin: 0 20px 20px 0;
+  background-color: white;
+  color: darkgrey;
+}
+
+.polaroid {
+	img {
+  	max-width: 100%;
+ 	}
+
+	a {
+	  color: #666;
+	  text-decoration: none;
+	}
+
+	.head {
+	  text-align: center;
+	  font: 15px/20px sans-serif;
+	  font-weight: normal;
+	}
+}
+
+.polaroid {
+	&:hover,
+	&:focus,
+	&:active {
+	  background-color: #fcf883;
+	}
+
+	.polaroid:hover .head,
+	.polaroid:focus .head,
+	.polaroid:active .head {
+	  color: black;
+	}
+}
+
+// --- Formular ---
+
+.form {
+	input[type=text], 
+	textarea {
+		width: 100%;
+		padding: 5px;
+		.box-sizing(border-box);
+	}
+}
+
+// --- Navigace ---
+
+.nav {
+	.clearfix;
+	margin-bottom: 1.5em;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;	
+}
+
+.nav_item { 
+	margin: 0;
+	display: inline-block;
+	
+	a, b {
+		font-weight: normal;
+		display: inline-block;
+		padding: .5em 1em;
+		text-align: center;
+		color: #333;
+		background: #fff;
+		text-decoration: none;
+	}
+	
+	b {
+		background: #ddd;
+		background: rgba(255, 255, 255, .5);		
+	}
+}
+
+// --- Layout ---
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	.clearfix;
+}
+
+.content {
+	width: 660px;
+	float: left;
+}
+
+.side {
+	width: 330px;
+	float: right;
+}
